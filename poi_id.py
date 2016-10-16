@@ -14,7 +14,8 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
 from sklearn.pipeline import Pipeline, FeatureUnion
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score
+from sklearn.metrics import recall_score, f1_score
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
 from sklearn.grid_search import GridSearchCV
 from sklearn.naive_bayes import GaussianNB
@@ -22,29 +23,35 @@ from sklearn.decomposition import PCA, RandomizedPCA
 from sklearn.feature_selection import SelectKBest
 
 
-########################################################################
-### Task 1: Select what features you'll use.
-########################################################################
+##############################################################################
+### Task 1: Selecting the features to use.
+##############################################################################
 
-# features_list is a list of strings, each of which is a feature name. The first feature is "poi".
-features_list = ["poi","salary", "deferral_payments", "total_payments", "loan_advances", "bonus", "restricted_stock_deferred",\
-				 "deferred_income", "total_stock_value", "expenses", "exercised_stock_options", "other", "long_term_incentive",\
-				 "restricted_stock", "director_fees","to_messages", "from_poi_to_this_person", "from_messages",\
-				 "from_this_person_to_poi", "shared_receipt_with_poi" ]
+# features_list is a list of strings, each of which is a feature name. 
+# The first feature is "poi".
+features_list = ["poi","salary", "deferral_payments", "total_payments",\
+				 "loan_advances", "bonus", "restricted_stock_deferred",\
+				 "deferred_income", "total_stock_value", "expenses",\
+				"exercised_stock_options", "other", "long_term_incentive",\
+				"restricted_stock", "director_fees","to_messages",\
+				"from_poi_to_this_person", "from_messages",\
+				"from_this_person_to_poi", "shared_receipt_with_poi" ]
 
 # Load the dictionary containing the dataset
 with open("final_project_dataset.pkl", "r") as data_file:
     data_dict = pickle.load(data_file)
 
-########################################################################
-### Task 3: Helper functions
-########################################################################
+##############################################################################
+### Task 2: Helper functions
+##############################################################################
 
 # Helper function to create new fraction_from_poi & fraction_to_poi features.
-# Credit: www.udacity.com/course/intro-to-machine-learning--ud120 course developers
+# Credit: www.udacity.com/course/intro-to-machine-learning--ud120
+# course developers.
 def computeFraction( poi_messages, all_messages ):
-    """ given a number messages to/from POI (numerator) and number of all messages to/from a person (denominator),
-        return the fraction of messages to/from that person that are from/to a POI
+    """ given a number messages to/from POI (numerator) and number of all
+        messages to/from a person (denominator), return the fraction of
+        messages to/from that person that are from/to a POI.
    	"""
     fraction = 0.
     if poi_messages == "NaN" or all_messages == "NaN":
@@ -54,8 +61,9 @@ def computeFraction( poi_messages, all_messages ):
     return fraction
 
 
-# Helper function to separate features to target list and remaining features list
-# Credit: www.udacity.com/course/intro-to-machine-learning--ud120 course developers
+# Helper function to separate features to target list and remaining features
+# list. Credit: www.udacity.com/course/intro-to-machine-learning--ud120
+# course developers.
 def targetFeatureSplit( data ):
     """ 
         given a numpy array, separate out the first feature
@@ -74,8 +82,10 @@ def targetFeatureSplit( data ):
  
 
 # Helper functions to convert data dictionery to numpy array of features
-# Credit: www.udacity.com/course/intro-to-machine-learning--ud120 course developers
-def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True, remove_any_zeroes=False, sort_keys = False):
+# Credit: www.udacity.com/course/intro-to-machine-learning--ud120 course
+# developers
+def featureFormat( dictionary,features,remove_NaN=True,remove_all_zeroes=True,\
+				  remove_any_zeroes=False, sort_keys = False):
     """ convert dictionary to numpy array of features
         remove_NaN = True will convert "NaN" string to 0.0
         remove_all_zeroes = True will omit any data points for which
@@ -142,9 +152,9 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
 
     return np.array(return_list)
 
-########################################################################
-## Task 2: Remove outliers
-########################################################################
+##############################################################################
+## Task 3: Remove outliers
+##############################################################################
 
 # Analyzing the data set:
 if False:
@@ -196,23 +206,23 @@ if False:
 	plt.show()
 
 
-########################################################################
+##############################################################################
 ### Task 4: Create new feature(s)
-########################################################################
+##############################################################################
 
-# Adding new features for each data point to data_dict 
-# Credit: www.udacity.com/course/intro-to-machine-learning--ud120 course developers
+# Adding new features for each data point to data_dict. Credit: 
+# www.udacity.com/course/intro-to-machine-learning--ud120 course developers
 for name in data_dict:
     data_point = data_dict[name]
 
     from_poi_to_this_person = data_point["from_poi_to_this_person"]
     to_messages = data_point["to_messages"]
-    fraction_from_poi = computeFraction( from_poi_to_this_person, to_messages )
+    fraction_from_poi = computeFraction( from_poi_to_this_person, to_messages)
     data_point["fraction_from_poi"] = fraction_from_poi
 
     from_this_person_to_poi = data_point["from_this_person_to_poi"]
     from_messages = data_point["from_messages"]
-    fraction_to_poi = computeFraction( from_this_person_to_poi, from_messages )
+    fraction_to_poi = computeFraction( from_this_person_to_poi, from_messages)
     data_point["fraction_to_poi"] = fraction_to_poi
 
 # Adding new features to features list for training and/or testing
@@ -228,8 +238,8 @@ if True:
 
 
 
-# Removed salary, deferral_payments, bonus, expenses, loan_advances, other,
-# deferred_income, long_term_incentive features, since total_payments are sum of these
+# Checking if exercised_stock_options, restricted_stock could be removed,
+# since the total_stock_value is a sum of these. 
 if False:
 	for name in data_dict:
 	    data_point = data_dict[name]
@@ -241,8 +251,7 @@ if False:
 	    if data_point['restricted_stock'] != 'NaN':
 	        total_payments += data_point['restricted_stock']
 	       
-
-	    print name, total_payments, data_point['total_stock_value']
+	    print name, total_payments - data_point['total_stock_value']
 
 
  
@@ -256,12 +265,12 @@ if targetFeatureSplit:
 my_dataset = data_dict
 
 
-# Extract features and labels from dataset for local testing
+# Extract features and labels from dataset for local testing.
 data = featureFormat(my_dataset, features_list, sort_keys = True)
 labels, features = targetFeatureSplit(data)
 
 
-# Testing new features: plotting
+# Testing new features: plotting.
 if False:
 	label_x = features_list[-1]
 	label_y = features_list[-2]
@@ -282,18 +291,20 @@ if False:
 	plt.show()
 
 
-########################################################################
+##############################################################################
 ### Task 5: Try a variety of classifiers
-########################################################################
+##############################################################################
 
 features_train, features_test, labels_train, labels_test = \
-		cross_validation.train_test_split(features, labels, test_size=0.35, random_state=42)
+		cross_validation.train_test_split(features, labels, test_size=0.35,\
+										  random_state=42)
 
 
 # Compute the metrics of Decision Tree Classifier
 if False:
 
-	clf = DecisionTreeClassifier( class_weight=None, criterion="entropy", max_depth=None,
+	clf = DecisionTreeClassifier( class_weight=None, criterion="entropy",\
+				max_depth=None,
 	            max_features="auto", max_leaf_nodes=None, min_samples_leaf=1,
 	            min_samples_split=3, min_weight_fraction_leaf=0.0,
 	            presort=False, random_state=42, splitter="best" )
@@ -306,10 +317,10 @@ if False:
 	precision_sc = precision_score(labels_test, pred)
 	f1_sc = f1_score(labels_test, pred)
 
- 	print "Decision Tree accuracy: {}".format( round( accuracy, 3 ) )
- 	print "Decision Tree recall_score: {}".format( round( recall_sc, 3) )
- 	print "Decision Tree precision_score: {}".format( round( precision_sc, 3) )
- 	print "Decision Tree f1_score: {}\n".format( round( f1_sc, 3) )
+ 	print "Decision Tree accuracy: {}".format( round( accuracy, 3 ))
+ 	print "Decision Tree recall_score: {}".format( round( recall_sc, 3))
+ 	print "Decision Tree precision_score: {}".format( round( precision_sc, 3))
+ 	print "Decision Tree f1_score: {}\n".format( round( f1_sc, 3))
 
 # Compute the metrics of GaussianNB classifier
 if False:
@@ -329,7 +340,8 @@ if False:
 
 # Compute the metrics of AdaBoostClassifier
 if False:
-	clf = AdaBoostClassifier(algorithm="SAMME.R",n_estimators=300,random_state=0)
+	clf = AdaBoostClassifier(algorithm="SAMME.R", n_estimators=300,\
+							 random_state=0)
 	clf.fit(features_train, labels_train)
 	pred = clf.predict(features_test)
 
@@ -345,7 +357,8 @@ if False:
 
 # Compute the metrics of RandomForestClassifier
 if False:
-	clf = RandomForestClassifier(n_estimators=500,min_samples_split=2,max_depth=20,min_samples_leaf=2)
+	clf = RandomForestClassifier(n_estimators=500, min_samples_split=2,\
+								 max_depth=20,min_samples_leaf=2)
 	clf.fit(features_train, labels_train)
 	pred = clf.predict(features_test)
 
@@ -362,7 +375,8 @@ if False:
 # Compute the metrics using Support Vector Classification
 if False:
 
-	parameters = {"kernel":['rbf'], "C":[1, 1000],"gamma": [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1]}
+	parameters = {"kernel":['rbf'], "C":[1, 1000],\
+				"gamma": [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1]}
 	svr = SVC()
 	clf = GridSearchCV(svr, parameters)
 
@@ -383,17 +397,17 @@ if False:
 
  
 
-
 ###############################################################################
-### Task 6: Tune your classifier to achieve better than .3 precision and recall 
+### Task 6: Tune the classifier to achieve better than .3 precision and recall 
 ### using our testing script. 
 ##############################################################################
 
 features_train, features_test, labels_train, labels_test = \
-		cross_validation.train_test_split(features, labels, test_size=0.35, random_state=42)
+		cross_validation.train_test_split(features, labels,\
+										 test_size=0.35, random_state=42)
 
 
-# Decision Tree
+# Decision Tree Classifier
 if True:
 
 
@@ -421,29 +435,29 @@ if True:
 		features_test_scaled = min_max_scaler.fit_transform(features_test)
 
 
-		print features_train_scaled
-
 		# Reduce the feature dimentions using Principal component analysis PCA
 		n_components = 5
-		pca = PCA(n_components=n_components, whiten=True)
-		pca.fit(features_train_scaled)
+		pca = PCA( n_components = n_components, whiten = True)
+		pca.fit( features_train_scaled)
 
 
 		# TEST: plot first pca component to test and visualize
 		if False:
 			pca_first = pca.components_[0]
 			pca_second = pca.components_[1]
-			print "pca first component: {}".format(pca_first)
+			print "pca first component: {}".format( pca_first)
 			print "***"	
 
 		# Select features according to the k highest scores
-		selection = SelectKBest(k=5)
+		selection = SelectKBest( k=5)
 
 		# Build estimator from PCA and Univariate SelectKBest selection:
-		combined_features = FeatureUnion([("pca", pca), ("univ_select", selection)])
+		combined_features = FeatureUnion([("pca", pca),\
+										 ("univ_select", selection)])
 
 		# Use combined train features to fit and transform train subset:
-		features_train_reduced = combined_features.fit( features_train_scaled, labels_train ).transform( features_train_scaled )
+		features_train_reduced = combined_features.fit( features_train_scaled,\
+								 labels_train ).transform( features_train_scaled )
 
 		# Use combined test features to transform test subset:
 		features_test_reduced = combined_features.transform( features_test_scaled )
@@ -454,12 +468,13 @@ if True:
 	                }
 
 	    # creating classifier            
-		svr = DecisionTreeClassifier( class_weight=None, criterion="gini", max_depth=None,
-		            max_features="auto", max_leaf_nodes=None, min_samples_leaf=1,
-		            min_samples_split=2, min_weight_fraction_leaf=0.0,
-		            presort=False, random_state=42, splitter="best" )
+		svr = DecisionTreeClassifier( class_weight = None, criterion = "gini",\
+					max_depth = None, max_features = "auto", max_leaf_nodes = None,\
+					min_samples_leaf = 1, min_samples_split = 2,\
+					min_weight_fraction_leaf = 0.0,\
+		            presort = False, random_state = 42, splitter = "best" )
 
-		# passing in classifier and the parrameters ????????
+		# passing in classifier and the parameters
 		clf = GridSearchCV( svr, parameters )
 
 		# fittig training subset
@@ -483,15 +498,14 @@ if True:
 
 	# printing averages of the metrics
 	if True:
-		print "Decision Tree average accuracy: {}".format( round( acc_ave/ folds, 3) )
-		print "Decision Tree average recall_score: {}".format( round( recall_sc_ave / folds,3) )
-		print "Decision Tree average precision_score: {}".format( round( precision_sc_ave / folds, 3) )
-		print "Decision Tree average f1_score: {}\n".format( round( f1_sc_ave/ folds , 3))	
-		print "Decision Tree best parameters : {}".format(clf.best_params_)
-	
+		print "DT average accuracy: {}".format( round( acc_ave/ folds, 3) )
+		print "DT average recall_score: {}".format( round( recall_sc_ave / folds,3) )
+		print "DT average precision_score: {}".format( round( precision_sc_ave / folds, 3))
+		print "DT average f1_score: {}\n".format( round( f1_sc_ave/ folds , 3))	
+		print "DT best parameters : {}".format(clf.best_params_)
+		
 
-
-# GaussianNB
+# GaussianNB Classifier
 if False:
 
 	#Split features and labels to test/ train subsets
@@ -519,8 +533,8 @@ if False:
 
 		# Reduce the feature dimentions using Principal component analysis PCA
 		n_components = 7
-		pca = PCA(n_components=n_components, whiten=True)
-		pca.fit(features_train_scaled)
+		pca = PCA( n_components = n_components, whiten = True)
+		pca.fit( features_train_scaled)
 
 
 		# TEST: plot first pca component to test and visualize
@@ -528,24 +542,25 @@ if False:
 			pca_first = pca.components_[0]
 			pca_second = pca.components_[1]
 			print "pca first component: {}".format(pca_first)
-			print "***"
+			print pca.components_
 
-			# for i, j in zip(features_reduced, features_scaled):
-			# 	plt.scatter(pca_first[0] * i[0], pca_first[1] * i[0], color="r")
-			# 	plt.scatter(pca_second[0] * i[1], pca_second[1] * i[1], color="y")
-			# 	plt.scatter(j[0], j[1], color="b")
-			# plt.xlabel("x component")
-			# plt.ylabel("y component")	
-			# plt.show()	
+			for i, j in zip( pca.components_, features_train_scaled):
+				plt.scatter( pca_first[0] * i[0], pca_first[1] * i[0], color="r")
+				plt.scatter( pca_second[0] * i[1], pca_second[1] * i[1], color="y")
+				plt.scatter( j[0], j[1], color="b")
+			plt.xlabel( "x component")
+			plt.ylabel( "y component")	
+			plt.show()	
 
 		# Select features according to the k highest scores
-		selection = SelectKBest(k=7)
+		selection = SelectKBest(k = 7)
 
 		# Build estimator from PCA and Univariate SelectKBest selection:
 		combined_features = FeatureUnion([("pca", pca), ("univ_select", selection)])
 
 		# Use combined train features to fit and transform train subset:
-		features_train_reduced = combined_features.fit( features_train_scaled, labels_train ).transform( features_train_scaled )
+		features_train_reduced = combined_features.fit( features_train_scaled,\
+								 labels_train ).transform( features_train_scaled )
 
 		# Use combined test features to transform test subset:
 		features_test_reduced = combined_features.transform( features_test_scaled )

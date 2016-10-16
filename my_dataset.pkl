@@ -3258,9 +3258,59 @@ sg26
 F0.0
 sg27
 g5
-ssS'BUTTS ROBERT H'
+ssS'LAY KENNETH L'
 p205
 (dp206
+g3
+I4273
+sg4
+I202911
+sg6
+I99832
+sg7
+I01
+sg8
+I-300000
+sg9
+S'kenneth.lay@enron.com'
+p207
+sg11
+I3600000
+sg12
+F0.028785396676807865
+sg13
+g5
+sg14
+I2411
+sg15
+I81525000
+sg16
+I36
+sg17
+I10359729
+sg18
+g5
+sg19
+I7000000
+sg20
+I49110078
+sg21
+I123
+sg22
+I16
+sg23
+I14761694
+sg24
+I1072321
+sg25
+I103559793
+sg26
+F0.4444444444444444
+sg27
+I34348384
+ssS'BUTTS ROBERT H'
+p208
+(dp209
 g3
 g5
 sg4
@@ -3273,7 +3323,7 @@ sg8
 I-75000
 sg9
 S'bob.butts@enron.com'
-p207
+p210
 sg11
 I175000
 sg12
@@ -3309,8 +3359,8 @@ F0.0
 sg27
 g5
 ssS'OLSON CINDY K'
-p208
-(dp209
+p211
+(dp212
 g3
 I1184
 sg4
@@ -3323,7 +3373,7 @@ sg8
 g5
 sg9
 S'cindy.olson@enron.com'
-p210
+p213
 sg11
 I100000
 sg12
@@ -3359,8 +3409,8 @@ F0.28846153846153844
 sg27
 I1637034
 ssS'MCDONALD REBECCA'
-p211
-(dp212
+p214
+(dp215
 g3
 I894
 sg4
@@ -3373,7 +3423,7 @@ sg8
 g5
 sg9
 S'rebecca.mcdonald@enron.com'
-p213
+p216
 sg11
 g5
 sg12
@@ -3409,8 +3459,8 @@ F0.07692307692307693
 sg27
 I757301
 ssS'CUMBERLAND MICHAEL S'
-p214
-(dp215
+p217
+(dp218
 g3
 g5
 sg4
@@ -3458,8 +3508,8 @@ F0.0
 sg27
 g5
 ssS'GAHN ROBERT S'
-p216
-(dp217
+p219
+(dp220
 g3
 g5
 sg4
@@ -3507,8 +3557,8 @@ F0.0
 sg27
 I83237
 ssS'MCCLELLAN GEORGE'
-p218
-(dp219
+p221
+(dp222
 g3
 I1744
 sg4
@@ -3521,7 +3571,7 @@ sg8
 I-125000
 sg9
 S'george.mcclellan@enron.com'
-p220
+p223
 sg11
 g5
 sg12
@@ -3557,8 +3607,8 @@ F0.0
 sg27
 I506765
 ssS'HERMANN ROBERT J'
-p221
-(dp222
+p224
+(dp225
 g3
 g5
 sg4
@@ -3571,7 +3621,7 @@ sg8
 I-280000
 sg9
 S'robert.hermann@enron.com'
-p223
+p226
 sg11
 I150000
 sg12
@@ -3607,8 +3657,8 @@ F0.0
 sg27
 I187500
 ssS'SCRIMSHAW MATTHEW'
-p224
-(dp225
+p227
+(dp228
 g3
 g5
 sg4
@@ -3621,7 +3671,7 @@ sg8
 g5
 sg9
 S'matthew.scrimshaw@enron.com'
-p226
+p229
 sg11
 g5
 sg12
@@ -3657,8 +3707,8 @@ F0.0
 sg27
 I759557
 ssS'GATHMANN WILLIAM D'
-p227
-(dp228
+p230
+(dp231
 g3
 g5
 sg4
@@ -3706,8 +3756,8 @@ F0.0
 sg27
 I1753766
 ssS'HAEDICKE MARK E'
-p229
-(dp230
+p232
+(dp233
 g3
 I4009
 sg4
@@ -3720,7 +3770,7 @@ sg8
 I-934484
 sg9
 S'mark.haedicke@enron.com'
-p231
+p234
 sg11
 I983346
 sg12
@@ -3756,8 +3806,8 @@ F0.03142709943328181
 sg27
 I608750
 ssS'BOWEN JR RAYMOND M'
-p232
-(dp233
+p235
+(dp236
 g3
 I1858
 sg4
@@ -3770,7 +3820,7 @@ sg8
 I-833
 sg9
 S'raymond.bowen@enron.com'
-p234
+p237
 sg11
 I974293
 sg12
@@ -3806,8 +3856,8 @@ F0.5555555555555556
 sg27
 g5
 ssS'GILLIS JOHN'
-p235
-(dp236
+p238
+(dp239
 g3
 g5
 sg4
@@ -3855,8 +3905,8 @@ F0.0
 sg27
 I9803
 ssS'FITZGERALD JAY L'
-p237
-(dp238
+p240
+(dp241
 g3
 I936
 sg4
@@ -3869,7 +3919,7 @@ sg8
 g5
 sg9
 S'jay.fitzgerald@enron.com'
-p239
+p242
 sg11
 I556416
 sg12
@@ -3905,8 +3955,8 @@ F0.5
 sg27
 I664461
 ssS'MORAN MICHAEL P'
-p240
-(dp241
+p243
+(dp244
 g3
 I672
 sg4
@@ -3919,7 +3969,7 @@ sg8
 g5
 sg9
 S'michael.moran@enron.com'
-p242
+p245
 sg11
 g5
 sg12
@@ -3955,8 +4005,8 @@ F0.0
 sg27
 I59539
 ssS'REDMOND BRIAN L'
-p243
-(dp244
+p246
+(dp247
 g3
 I1671
 sg4
@@ -3969,7 +4019,7 @@ sg8
 g5
 sg9
 S'brian.redmond@enron.com'
-p245
+p248
 sg11
 g5
 sg12
@@ -4005,8 +4055,8 @@ F0.22171945701357465
 sg27
 I7509039
 ssS'BAZELIDES PHILIP J'
-p246
-(dp247
+p249
+(dp250
 g3
 g5
 sg4
@@ -4054,8 +4104,8 @@ F0.0
 sg27
 I1599641
 ssS'BELDEN TIMOTHY N'
-p248
-(dp249
+p251
+(dp252
 g3
 I7991
 sg4
@@ -4068,7 +4118,7 @@ sg8
 I-2334434
 sg9
 S'tim.belden@enron.com'
-p250
+p253
 sg11
 g5
 sg12
@@ -4104,8 +4154,8 @@ F0.2231404958677686
 sg27
 I953136
 ssS'DURAN WILLIAM D'
-p251
-(dp252
+p254
+(dp255
 g3
 I904
 sg4
@@ -4118,7 +4168,7 @@ sg8
 g5
 sg9
 S'w.duran@enron.com'
-p253
+p256
 sg11
 I1105218
 sg12
@@ -4154,8 +4204,8 @@ F0.25
 sg27
 I1451869
 ssS'THORN TERENCE H'
-p254
-(dp255
+p257
+(dp258
 g3
 I266
 sg4
@@ -4168,7 +4218,7 @@ sg8
 g5
 sg9
 S'terence.thorn@enron.com'
-p256
+p259
 sg11
 I200000
 sg12
@@ -4204,8 +4254,8 @@ F0.0
 sg27
 I4452476
 ssS'FASTOW ANDREW S'
-p257
-(dp258
+p260
+(dp261
 g3
 g5
 sg4
@@ -4218,7 +4268,7 @@ sg8
 I-1386055
 sg9
 S'andrew.fastow@enron.com'
-p259
+p262
 sg11
 I1736055
 sg12
@@ -4254,8 +4304,8 @@ F0.0
 sg27
 g5
 ssS'FOY JOE'
-p260
-(dp261
+p263
+(dp264
 g3
 I57
 sg4
@@ -4268,7 +4318,7 @@ sg8
 g5
 sg9
 S'tracy.foy@enron.com'
-p262
+p265
 sg11
 g5
 sg12
@@ -4304,8 +4354,8 @@ F0.0
 sg27
 I343434
 ssS'CALGER CHRISTOPHER F'
-p263
-(dp264
+p266
+(dp267
 g3
 I2598
 sg4
@@ -4318,7 +4368,7 @@ sg8
 I-262500
 sg9
 S'christopher.calger@enron.com'
-p265
+p268
 sg11
 I375304
 sg12
@@ -4354,8 +4404,8 @@ F0.1736111111111111
 sg27
 g5
 ssS'RICE KENNETH D'
-p266
-(dp267
+p269
+(dp270
 g3
 I905
 sg4
@@ -4368,7 +4418,7 @@ sg8
 I-3504386
 sg9
 S'ken.rice@enron.com'
-p268
+p271
 sg11
 I1617011
 sg12
@@ -4404,8 +4454,8 @@ F0.2222222222222222
 sg27
 I19794175
 ssS'KAMINSKI WINCENTY J'
-p269
-(dp270
+p272
+(dp273
 g3
 I4607
 sg4
@@ -4418,7 +4468,7 @@ sg8
 g5
 sg9
 S'vince.kaminski@enron.com'
-p271
+p274
 sg11
 I323466
 sg12
@@ -4454,8 +4504,8 @@ F0.011901447661469933
 sg27
 I850010
 ssS'LOCKHART EUGENE E'
-p272
-(dp273
+p275
+(dp276
 g3
 g5
 sg4
@@ -4503,8 +4553,8 @@ F0.0
 sg27
 g5
 ssS'COX DAVID'
-p274
-(dp275
+p277
+(dp278
 g3
 I102
 sg4
@@ -4517,7 +4567,7 @@ sg8
 I-41250
 sg9
 S'chip.cox@enron.com'
-p276
+p279
 sg11
 g5
 sg12
@@ -4553,8 +4603,8 @@ F0.12121212121212122
 sg27
 I117551
 ssS'OVERDYKE JR JERE C'
-p277
-(dp278
+p280
+(dp281
 g3
 g5
 sg4
@@ -4567,7 +4617,7 @@ sg8
 g5
 sg9
 S'jere.overdyke@enron.com'
-p279
+p282
 sg11
 I135836
 sg12
@@ -4603,8 +4653,8 @@ F0.0
 sg27
 I5266578
 ssS'PEREIRA PAULO V. FERRAZ'
-p280
-(dp281
+p283
+(dp284
 g3
 g5
 sg4
@@ -4652,8 +4702,8 @@ F0.0
 sg27
 g5
 ssS'STABLER FRANK'
-p282
-(dp283
+p285
+(dp286
 g3
 g5
 sg4
@@ -4666,7 +4716,7 @@ sg8
 g5
 sg9
 S'frank.stabler@enron.com'
-p284
+p287
 sg11
 g5
 sg12
@@ -4702,8 +4752,8 @@ F0.0
 sg27
 g5
 ssS'SKILLING JEFFREY K'
-p285
-(dp286
+p288
+(dp289
 g3
 I3627
 sg4
@@ -4716,7 +4766,7 @@ sg8
 g5
 sg9
 S'jeff.skilling@enron.com'
-p287
+p290
 sg11
 I1920000
 sg12
@@ -4752,8 +4802,8 @@ F0.2777777777777778
 sg27
 I19250000
 ssS'BLAKE JR. NORMAN P'
-p288
-(dp289
+p291
+(dp292
 g3
 g5
 sg4
@@ -4801,8 +4851,8 @@ F0.0
 sg27
 g5
 ssS'SHERRICK JEFFREY B'
-p290
-(dp291
+p293
+(dp294
 g3
 I613
 sg4
@@ -4815,7 +4865,7 @@ sg8
 g5
 sg9
 S'jeffrey.sherrick@enron.com'
-p292
+p295
 sg11
 g5
 sg12
@@ -4851,8 +4901,8 @@ F0.72
 sg27
 I1426469
 ssS'PRENTICE JAMES'
-p293
-(dp294
+p296
+(dp297
 g3
 g5
 sg4
@@ -4865,7 +4915,7 @@ sg8
 g5
 sg9
 S'james.prentice@enron.com'
-p295
+p298
 sg11
 g5
 sg12
@@ -4901,8 +4951,8 @@ F0.0
 sg27
 I886231
 ssS'GRAY RODNEY'
-p296
-(dp297
+p299
+(dp300
 g3
 g5
 sg4
@@ -4950,8 +5000,8 @@ F0.0
 sg27
 g5
 ssS'PICKERING MARK R'
-p298
-(dp299
+p301
+(dp302
 g3
 I898
 sg4
@@ -4964,7 +5014,7 @@ sg8
 g5
 sg9
 S'mark.pickering@enron.com'
-p300
+p303
 sg11
 g5
 sg12
@@ -5000,8 +5050,8 @@ F0.0
 sg27
 I28798
 ssS'NOLES JAMES L'
-p301
-(dp302
+p304
+(dp305
 g3
 g5
 sg4
@@ -5049,8 +5099,8 @@ F0.0
 sg27
 g5
 ssS'KEAN STEVEN J'
-p303
-(dp304
+p306
+(dp307
 g3
 I12754
 sg4
@@ -5063,7 +5113,7 @@ sg8
 g5
 sg9
 S'steven.kean@enron.com'
-p305
+p308
 sg11
 I300000
 sg12
@@ -5099,8 +5149,8 @@ F0.05725699067909454
 sg27
 I2022048
 ssS'FOWLER PEGGY'
-p306
-(dp307
+p309
+(dp310
 g3
 I517
 sg4
@@ -5113,7 +5163,7 @@ sg8
 g5
 sg9
 S'kulvinder.fowler@enron.com'
-p308
+p311
 sg11
 g5
 sg12
@@ -5149,8 +5199,8 @@ F0.0
 sg27
 I1324578
 ssS'WASAFF GEORGE'
-p309
-(dp310
+p312
+(dp313
 g3
 I400
 sg4
@@ -5163,7 +5213,7 @@ sg8
 I-583325
 sg9
 S'george.wasaff@enron.com'
-p311
+p314
 sg11
 I200000
 sg12
@@ -5199,8 +5249,8 @@ F0.23333333333333334
 sg27
 I1668260
 ssS'WHITE JR THOMAS E'
-p312
-(dp313
+p315
+(dp316
 g3
 g5
 sg4
@@ -5213,7 +5263,7 @@ sg8
 g5
 sg9
 S'thomas.white@enron.com'
-p314
+p317
 sg11
 g5
 sg12
@@ -5249,8 +5299,8 @@ F0.0
 sg27
 I1297049
 ssS'CHRISTODOULOU DIOMEDES'
-p315
-(dp316
+p318
+(dp319
 g3
 g5
 sg4
@@ -5263,7 +5313,7 @@ sg8
 g5
 sg9
 S'diomedes.christodoulou@enron.com'
-p317
+p320
 sg11
 g5
 sg12
@@ -5299,8 +5349,8 @@ F0.0
 sg27
 I5127155
 ssS'ALLEN PHILLIP K'
-p318
-(dp319
+p321
+(dp322
 g3
 I2902
 sg4
@@ -5313,7 +5363,7 @@ sg8
 I-3081055
 sg9
 S'phillip.allen@enron.com'
-p320
+p323
 sg11
 I304805
 sg12
@@ -5349,8 +5399,8 @@ F0.029612756264236904
 sg27
 I1729541
 ssS'SHARP VICTORIA T'
-p321
-(dp322
+p324
+(dp325
 g3
 I3136
 sg4
@@ -5363,7 +5413,7 @@ sg8
 g5
 sg9
 S'vicki.sharp@enron.com'
-p323
+p326
 sg11
 I422158
 sg12
@@ -5399,8 +5449,8 @@ F0.04411764705882353
 sg27
 I281073
 ssS'JAEDICKE ROBERT'
-p324
-(dp325
+p327
+(dp328
 g3
 g5
 sg4
@@ -5448,8 +5498,8 @@ F0.0
 sg27
 I431750
 ssS'WINOKUR JR. HERBERT S'
-p326
-(dp327
+p329
+(dp330
 g3
 g5
 sg4
@@ -5497,8 +5547,8 @@ F0.0
 sg27
 g5
 ssS'BROWN MICHAEL'
-p328
-(dp329
+p331
+(dp332
 g3
 I1486
 sg4
@@ -5511,7 +5561,7 @@ sg8
 g5
 sg9
 S'michael.brown@enron.com'
-p330
+p333
 sg11
 g5
 sg12
@@ -5547,8 +5597,8 @@ F0.024390243902439025
 sg27
 g5
 ssS'BADUM JAMES P'
-p331
-(dp332
+p334
+(dp335
 g3
 g5
 sg4
@@ -5596,8 +5646,8 @@ F0.0
 sg27
 I257817
 ssS'HUGHES JAMES A'
-p333
-(dp334
+p336
+(dp337
 g3
 I719
 sg4
@@ -5610,7 +5660,7 @@ sg8
 g5
 sg9
 S'james.hughes@enron.com'
-p335
+p338
 sg11
 g5
 sg12
@@ -5646,8 +5696,8 @@ F0.14705882352941177
 sg27
 I754966
 ssS'REYNOLDS LAWRENCE'
-p336
-(dp337
+p339
+(dp340
 g3
 g5
 sg4
@@ -5695,8 +5745,8 @@ F0.0
 sg27
 I4160672
 ssS'DIMICHELE RICHARD G'
-p338
-(dp339
+p341
+(dp342
 g3
 g5
 sg4
@@ -5709,7 +5759,7 @@ sg8
 g5
 sg9
 S'richard.dimichele@enron.com'
-p340
+p343
 sg11
 I694862
 sg12
@@ -5745,8 +5795,8 @@ F0.0
 sg27
 I8191755
 ssS'BHATNAGAR SANJAY'
-p341
-(dp342
+p344
+(dp345
 g3
 I523
 sg4
@@ -5759,7 +5809,7 @@ sg8
 g5
 sg9
 S'sanjay.bhatnagar@enron.com'
-p343
+p346
 sg11
 g5
 sg12
@@ -5779,9 +5829,9 @@ I137864
 sg19
 g5
 sS'total_stock_value'
-p344
+p347
 S'NaN'
-p345
+p348
 sg21
 I0
 sg22
@@ -5797,8 +5847,8 @@ F0.034482758620689655
 sg27
 I2604490
 ssS'CARTER REBECCA C'
-p346
-(dp347
+p349
+(dp350
 g3
 I312
 sg4
@@ -5811,7 +5861,7 @@ sg8
 I-159792
 sg9
 S'rebecca.carter@enron.com'
-p348
+p351
 sg11
 I75000
 sg12
@@ -5847,8 +5897,8 @@ F0.4666666666666667
 sg27
 g5
 ssS'BUCHANAN HAROLD G'
-p349
-(dp350
+p352
+(dp353
 g3
 I1088
 sg4
@@ -5861,7 +5911,7 @@ sg8
 g5
 sg9
 S'john.buchanan@enron.com'
-p351
+p354
 sg11
 I304805
 sg12
@@ -5897,8 +5947,8 @@ F0.0
 sg27
 I825464
 ssS'YEAP SOON'
-p352
-(dp353
+p355
+(dp356
 g3
 g5
 sg4
@@ -5946,8 +5996,8 @@ F0.0
 sg27
 I192758
 ssS'MURRAY JULIA H'
-p354
-(dp355
+p357
+(dp358
 g3
 I2192
 sg4
@@ -5960,7 +6010,7 @@ sg8
 g5
 sg9
 S'julia.murray@enron.com'
-p356
+p359
 sg11
 I125000
 sg12
@@ -5996,8 +6046,8 @@ F0.044444444444444446
 sg27
 I400478
 ssS'GARLAND C KEVIN'
-p357
-(dp358
+p360
+(dp361
 g3
 I209
 sg4
@@ -6010,7 +6060,7 @@ sg8
 g5
 sg9
 S'kevin.garland@enron.com'
-p359
+p362
 sg11
 I375304
 sg12
@@ -6046,8 +6096,8 @@ F0.6136363636363636
 sg27
 I636246
 ssS'DODSON KEITH'
-p360
-(dp361
+p363
+(dp364
 g3
 I176
 sg4
@@ -6060,7 +6110,7 @@ sg8
 g5
 sg9
 S'keith.dodson@enron.com'
-p362
+p365
 sg11
 g5
 sg12
@@ -6096,8 +6146,8 @@ F0.21428571428571427
 sg27
 g5
 ssS'YEAGER F SCOTT'
-p363
-(dp364
+p366
+(dp367
 g3
 g5
 sg4
@@ -6110,7 +6160,7 @@ sg8
 g5
 sg9
 S'scott.yeager@enron.com'
-p365
+p368
 sg11
 g5
 sg12
@@ -6146,8 +6196,8 @@ F0.0
 sg27
 I8308552
 ssS'HIRKO JOSEPH'
-p366
-(dp367
+p369
+(dp370
 g3
 g5
 sg4
@@ -6160,7 +6210,7 @@ sg8
 g5
 sg9
 S'joe.hirko@enron.com'
-p368
+p371
 sg11
 g5
 sg12
@@ -6196,8 +6246,8 @@ F0.0
 sg27
 I30766064
 ssS'DIETRICH JANET R'
-p369
-(dp370
+p372
+(dp373
 g3
 I2572
 sg4
@@ -6210,7 +6260,7 @@ sg8
 g5
 sg9
 S'janet.dietrich@enron.com'
-p371
+p374
 sg11
 I556416
 sg12
@@ -6246,8 +6296,8 @@ F0.2222222222222222
 sg27
 I1550019
 ssS'DERRICK JR. JAMES V'
-p372
-(dp373
+p375
+(dp376
 g3
 I2181
 sg4
@@ -6260,7 +6310,7 @@ sg8
 I-1284000
 sg9
 S'james.derrick@enron.com'
-p374
+p377
 sg11
 I484000
 sg12
@@ -6296,8 +6346,8 @@ F0.022002200220022004
 sg27
 I8831913
 ssS'FREVERT MARK A'
-p375
-(dp376
+p378
+(dp379
 g3
 I3275
 sg4
@@ -6310,7 +6360,7 @@ sg8
 I-3367011
 sg9
 S'mark.frevert@enron.com'
-p377
+p380
 sg11
 I1617011
 sg12
@@ -6346,8 +6396,8 @@ F0.2857142857142857
 sg27
 I10433518
 ssS'PAI LOU L'
-p378
-(dp379
+p381
+(dp382
 g3
 g5
 sg4
@@ -6360,7 +6410,7 @@ sg8
 g5
 sg9
 S'lou.pai@enron.com'
-p380
+p383
 sg11
 g5
 sg12
@@ -6396,8 +6446,8 @@ F0.0
 sg27
 I15364167
 ssS'BAY FRANKLIN R'
-p381
-(dp382
+p384
+(dp385
 g3
 g5
 sg4
@@ -6410,7 +6460,7 @@ sg8
 I-201641
 sg9
 S'frank.bay@enron.com'
-p383
+p386
 sg11
 g5
 sg12
@@ -6446,8 +6496,8 @@ F0.0
 sg27
 g5
 ssS'HAYSLETT RODERICK J'
-p384
-(dp385
+p387
+(dp388
 g3
 I2649
 sg4
@@ -6460,7 +6510,7 @@ sg8
 g5
 sg9
 S'rod.hayslett@enron.com'
-p386
+p389
 sg11
 g5
 sg12
@@ -6496,8 +6546,8 @@ F0.03581526861451461
 sg27
 g5
 ssS'FUGH JOHN L'
-p387
-(dp388
+p390
+(dp391
 g3
 g5
 sg4
@@ -6545,8 +6595,8 @@ F0.0
 sg27
 I176378
 ssS'FALLON JAMES B'
-p389
-(dp390
+p392
+(dp393
 g3
 I1755
 sg4
@@ -6559,7 +6609,7 @@ sg8
 g5
 sg9
 S'jim.fallon@enron.com'
-p391
+p394
 sg11
 I374347
 sg12
@@ -6595,8 +6645,8 @@ F0.49333333333333335
 sg27
 I940257
 ssS'KOENIG MARK E'
-p392
-(dp393
+p395
+(dp396
 g3
 I2374
 sg4
@@ -6609,7 +6659,7 @@ sg8
 g5
 sg9
 S'mark.koenig@enron.com'
-p394
+p397
 sg11
 I300000
 sg12
@@ -6645,8 +6695,8 @@ F0.2459016393442623
 sg27
 I671737
 ssS'SAVAGE FRANK'
-p395
-(dp396
+p398
+(dp399
 g3
 g5
 sg4
@@ -6694,8 +6744,8 @@ F0.0
 sg27
 g5
 ssS'IZZO LAWRENCE L'
-p397
-(dp398
+p400
+(dp401
 g3
 I496
 sg4
@@ -6708,7 +6758,7 @@ sg8
 g5
 sg9
 S'larry.izzo@enron.com'
-p399
+p402
 sg11
 I312500
 sg12
@@ -6744,8 +6794,8 @@ F0.2631578947368421
 sg27
 I2165172
 ssS'TILNEY ELIZABETH A'
-p400
-(dp401
+p403
+(dp404
 g3
 I460
 sg4
@@ -6758,7 +6808,7 @@ sg8
 I-575000
 sg9
 S'elizabeth.tilney@enron.com'
-p402
+p405
 sg11
 I275000
 sg12
@@ -6794,8 +6844,8 @@ F0.5789473684210527
 sg27
 I591250
 ssS'MARTIN AMANDA K'
-p403
-(dp404
+p406
+(dp407
 g3
 I1522
 sg4
@@ -6808,7 +6858,7 @@ sg8
 g5
 sg9
 S'a..martin@enron.com'
-p405
+p408
 sg11
 I5145434
 sg12
@@ -6844,8 +6894,8 @@ F0.0
 sg27
 I2070306
 ssS'BUY RICHARD B'
-p406
-(dp407
+p409
+(dp410
 g3
 I3523
 sg4
@@ -6858,7 +6908,7 @@ sg8
 I-694862
 sg9
 S'rick.buy@enron.com'
-p408
+p411
 sg11
 I769862
 sg12
@@ -6894,8 +6944,8 @@ F0.06742640075973409
 sg27
 I2542813
 ssS'GRAMM WENDY L'
-p409
-(dp410
+p412
+(dp413
 g3
 g5
 sg4
@@ -6943,8 +6993,8 @@ F0.0
 sg27
 g5
 ssS'CAUSEY RICHARD A'
-p411
-(dp412
+p414
+(dp415
 g3
 I1892
 sg4
@@ -6957,7 +7007,7 @@ sg8
 I-235000
 sg9
 S'richard.causey@enron.com'
-p413
+p416
 sg11
 I350000
 sg12
@@ -6993,8 +7043,8 @@ F0.24489795918367346
 sg27
 g5
 ssS'TAYLOR MITCHELL S'
-p414
-(dp415
+p417
+(dp418
 g3
 I533
 sg4
@@ -7007,7 +7057,7 @@ sg8
 g5
 sg9
 S'mitchell.taylor@enron.com'
-p416
+p419
 sg11
 g5
 sg12
@@ -7043,8 +7093,8 @@ F0.0
 sg27
 I3181250
 ssS'DONAHUE JR JEFFREY M'
-p417
-(dp418
+p420
+(dp421
 g3
 I865
 sg4
@@ -7057,7 +7107,7 @@ sg8
 I-300000
 sg9
 S'jeff.donahue@enron.com'
-p419
+p422
 sg11
 g5
 sg12
@@ -7093,8 +7143,8 @@ F0.5
 sg27
 I765920
 ssS'GLISAN JR BEN F'
-p420
-(dp421
+p423
+(dp424
 g3
 I873
 sg4
@@ -7107,7 +7157,7 @@ sg8
 g5
 sg9
 S'ben.glisan@enron.com'
-p422
+p425
 sg11
 I71023
 sg12
