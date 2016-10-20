@@ -195,7 +195,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In 2002, Enron, one of the largest companies in the United States, had collapsed into bankruptcy due to widespread corporate fraud. The dataset was originally made public by the Federal Energy Regulatory Commission during its investigation.</p>
-<p>The goal was to perform data analysis on Enron dataset to identify Enron employees, who may have committed fraud. I put my machine learning skills to build, tune, evaluate the best performing algorithm, by trying various combinations of supervised classification algorithms and parameters, engineer the features, draw conclusion to make sense of the analysis process and communicating it to others.</p>
+<p>The goal was to perform data analysis on Enron dataset to identify Enron employees, who may have committed fraud. I put my machine learning skills to build, tune, evaluate the best performing algorithm, by trying various combinations of supervised classification algorithms and parameters, engineer the features, draw conclusion to make sense of the analysis process and communicatie it to others.</p>
 
 </div>
 </div>
@@ -230,7 +230,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -245,7 +245,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -807,7 +807,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The exploration of the combined email and finance dataset revealed that TOTAL and THE TRAVEL AGENCY IN THE PARK' are not a person, he values of all features for CHAN RONNIE is 0. These data points are removed.</p>
+<p>The exploration of the combined email and finance dataset revealed that TOTAL and THE TRAVEL AGENCY IN THE PARK' are not a person. Also, the values of all features for CHAN RONNIE is 0. These data points are removed in the procccess of feature formating, by a helper function, featureFormat().</p>
 
 </div>
 </div>
@@ -817,7 +817,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Also, the plot in the Figure 1 reveals one extreme outlier. This is a data point of LAY KENNETH L. But, since he is a known POI, I did not remove this data point. I was just curious, if it makes a difference to include or remove it in the final evaluation. See <a href="#Evaluation_1">Evaluation 1</a></p>
+<p>The plot in the Figure 1 reveals one extreme outlier. This is a data point of LAY KENNETH L. But, since he is a known POI, I did not remove this data point. I was just curious, if it makes a difference to include or remove it in the final evaluation. See <a href="#Evaluation_1">Evaluation 1</a></p>
 <p>The final dataset contains 143 persons.</p>
 
 </div>
@@ -837,7 +837,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I calculated new features: "fraction_from_poi" and "fraction_to_poi".  The features "from_poi_to_this_person", "from_this_person_to_poi", "to_messages", "from_messages" are removed, because these were used to calculate the new ones. I performed testing these new features using my final pick Decision Tree Classifier. See <a href="#Evaluation_7">Evaluation 7</a> and <a href="#Evaluation_8">Evaluation 8</a> for the metrics performing the testing with features included and excluded respectively.</p>
+<p>I calculated new features: "fraction_from_poi" and "fraction_to_poi".  The features "from_poi_to_this_person", "from_this_person_to_poi", "to_messages", "from_messages" are removed, since these were used to calculate the new ones. I performed testing these new features using my final choice - Decision Tree Classifier. See <a href="#Evaluation_7">Evaluation 7</a> and <a href="#Evaluation_8">Evaluation 8</a> for the metrics performing the testing with features included and excluded respectively.</p>
 
 </div>
 </div>
@@ -1372,7 +1372,7 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>For a final step I have selected two algorithms GaussianNB and Decison Tree to test. Both are using automated feature selection.</p>
+<p>For a final step I have selected two algorithms GaussianNB and Decison Tree to test to narrow my choices. Both are using automated feature selection.</p>
 <ul>
 <li>Scaling features with MinMaxScaler. The estimator would not be able to learn from new features correctly as expected, since these are orders of magnitude smaller than others. </li>
 <li>Using Principal component analysis PCA. Linear dimensionality reduction and keeping only the most significant singular vectors to project the data to a lower dimensional space.</li>
@@ -1426,9 +1426,9 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These algorithms I picked for the final run, using parameter tuning and validation functions:</p>
 <ul>
-<li>GaussianNB Classifier. See <a href="#Evaluation_6">Evaluation 6</a></li>
-<li>Decision Tree ( new features included in the dataset ). See <a href="#Evaluation_7">Evaluation 7</a></li>
-<li>Decision Tree ( new features excluded from the dataset ).See <a href="#Evaluation_8">Evaluation 8</a></li>
+<li>GaussianNB Classifier ( new features included in the dataset ). See <a href="#Evaluation_6">Evaluation 6</a>.</li>
+<li>Decision Tree ( new features included in the dataset ). See <a href="#Evaluation_7">Evaluation 7</a>.</li>
+<li>Decision Tree ( new features excluded from the dataset ).See <a href="#Evaluation_8">Evaluation 8</a>.</li>
 </ul>
 
 </div>
@@ -1457,21 +1457,22 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Parameter tuning is a process trying and testing various parameters which are passed as arguments to the constructor of the estimator classes.  In my project I was using GridSearchCV in SVC and Decision Tree models to perform search over supplied parameter values (kernel, C, gamma values), and all the possible combinations of values are evaluated and the best combination is returned.</p>
+<p>Parameter tuning is a process of trying and testing various parameters which are passed as arguments to the constructor of the estimator classes. It is important because it helps to find better algorithm.  To start using an algorithm, we need beforehand to set parameter values, and later try various combinations of these to see which set of the parameters perform the best when training, in order to improve the fit on the test set.</p>
+<p>In my project I was using GridSearchCV in SVC and Decision Tree models to perform search over supplied parameter values (kernel, C, gamma values), and all the possible combinations of values are evaluated and the best combination is returned.</p>
 <p>GridSearchCV - Exhaustive search over specified parameter values for an estimator. The parameters of the estimator are used to apply to fit and predict functions, and are optimized by grid-search over a parameter grid.</p>
 <p>To compute the metrics using Support Vector Classification:</p>
 <ul>
-<li>The  best SVC parameters: 
-{'kernel': 'rbf', 'C': 1, 'gamma': 0.0001}</li>
 <li>The parameters passed: 
 parameters = {"kernel":['rbf'], "C":[1, 1000],"gamma": [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1]}</li>
+<li>The  best SVC parameters: 
+{'kernel': 'rbf', 'C': 1, 'gamma': 0.0001}</li>
 </ul>
-<p>To compute the metrics using Decision Tree:</p>
+<p>To compute the metrics using Decision Tree Classifier:</p>
 <ul>
-<li>Decision Tree best parameters : 
-{'min_samples_split': 2, 'criterion': 'entropy'}</li>
 <li>The parameters passed: 
 parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</li>
+<li>Decision Tree best parameters : 
+{'min_samples_split': 2, 'criterion': 'entropy'}</li>
 </ul>
 
 </div>
@@ -1493,11 +1494,16 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Validation is the process to estimate how well the model has been trained using test data. In my project for my final algorithms, I used these functions:</p>
 <ul>
-<li>cross_validation.train_test_split() -  to split dataset into training and testing subsets.</li>
-<li>cross_validation.KFold() - to split and test data with various values of the fold parameter.</li>
-<li>SelectKBest(k) - to select features according to the k highest scores.</li>
-<li>PCA() - to reduce the feature dimensions using Principal component analysis PCA. It decomposes a multivariate dataset in a set of successive orthogonal components that explain a maximum amount of the variance. </li>
-<li>FeatureUnion() - to concatenate results of estimator from PCA and Univariate SelectKBest selection.</li>
+<li><p>cross_validation.train_test_split() -  to split dataset into training and testing subsets where I manually changed the proportion of the dataset to include in the test split. When trying variety of classifiers, best performance was obtained with test_size value 0.35.  See <a href="#Evaluation_metrics">Evaluation_metrics</a> of 5 tested classifiers.</p>
+</li>
+<li><p>cross_validation.KFold() - to split and test data into k consecutive folds with various values of the fold parameter. Each fold is used a validation set once while the remaining folds form the training set. For the final 2 algorithms I tried k = (4,5,6) in combination with other parameters. See <a href="#Final_evaluation_metrics">Final evaluation_metrics</a> for the metrics. GaussianNB Classifier was best with the fold = 4, DT Classifier performed best with fold = 6.</p>
+</li>
+<li><p>SelectKBest() - to select k number of highest scored features. In my project the best performance was achieved when k = 9. See <a href="#Final_evaluation_metrics">Final evaluation_metrics</a> for the metrics.</p>
+</li>
+<li><p>PCA() - to reduce the feature dimensions using Principal component analysis PCA. It decomposes a multivariate dataset in a set of successive orthogonal components that explain a maximum amount of the variance and bring out strong patterns in a dataset.  In PCA I tried values of n_components = (5,7,10), as the maximum number of features to keep. Best performance was achieved with n_components = 10.</p>
+</li>
+<li><p>FeatureUnion() - to concatenate results of estimator from PCA and Univariate SelectKBest selection.</p>
+</li>
 </ul>
 
 </div>
@@ -1518,13 +1524,13 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>The <strong>accuracy_score</strong> function computes the accuracy, either the fraction (default) or the count of correct predictions.</p>
+<li><p>The <strong>accuracy_score</strong> function computes the accuracy, either the fraction or the count of correct predictions from all predictions made.</p>
 </li>
-<li><p>The <strong>recall</strong> is the ratio <strong>tp / (tp + fn)</strong> where <strong>tp</strong> is the number of true positives and <strong>fn</strong> the number of false negatives. The <strong>recall</strong> is intuitively the ability of the classifier to find all the positive samples. The best value is 1.</p>
+<li><p>The <strong>recall</strong> is the ratio <strong>tp / (tp + fn)</strong> where <strong>tp</strong> is the number of true positives and <strong>fn</strong> the number of false negatives. The <strong>recall</strong> is intuitively the ability of the classifier to find all the positive samples. In this project, recall is the ratio of POI's recognised by the model and all POI's that existed in the dataset. The best value is 1.</p>
 </li>
-<li><p>The <strong>precision</strong> is the ratio <strong>tp / (tp + fp)</strong> where <strong>tp</strong> is the number of true positives and <strong>fp</strong> the number of false positives. The <strong>precision</strong> is intuitively the ability of the classifier not to label as positive a sample that is negative.  The best value is 1.</p>
+<li><p>The <strong>precision</strong> is the ratio <strong>tp / (tp + fp)</strong> where <strong>tp</strong> is the number of true positives and <strong>fp</strong> the number of false positives. The <strong>precision</strong> is intuitively the ability of the classifier not to label as positive a sample that is negative.  That is, in my project, the precision shows the ratio of recognised POI's and of all the people picked out by a model as POI. The best value is 1.</p>
 </li>
-<li><p>The <strong>F1</strong> score can be interpreted as a weighted average of the <strong>precision</strong> and <strong>recall</strong>. Best value is 1. The relative contribution of <strong>precision</strong> and <strong>recall</strong> to the <strong>F1</strong> score are equal. The formula is: <em>*F1 = 2 </em> (precision * recall) / (precision + recall)</p>
+<li><p>The <strong>F1</strong> score can be interpreted as a weighted average of the <strong>precision</strong> and <strong>recall</strong>. Best value is 1. The relative contribution of <strong>precision</strong> and <strong>recall</strong> to the <strong>F1</strong> score are equal. The formula is: <strong>F1 = 2 <em> (precision </em> recall) / (precision + recall)</strong>.</p>
 </li>
 </ul>
 
@@ -1536,6 +1542,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='Evaluation_metrics'></a></p>
 <h3 id="4.4-Evaluation-metrics-(-new-features-included-in-the-dataset-)">4.4 Evaluation metrics ( new features included in the dataset )<a class="anchor-link" href="#4.4-Evaluation-metrics-(-new-features-included-in-the-dataset-)">&#182;</a></h3>
 </div>
 </div>
@@ -1737,7 +1744,8 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.5-Final-Algorithm-Evaluation-Metrics-(-with-new-features-included-in-the-dataset-)">4.5 Final Algorithm Evaluation Metrics ( with new features included in the dataset )<a class="anchor-link" href="#4.5-Final-Algorithm-Evaluation-Metrics-(-with-new-features-included-in-the-dataset-)">&#182;</a></h4>
+<p><a id='Final_evaluation_metrics_w'></a></p>
+<h3 id="4.5-Final-Algorithm-Evaluation-Metrics-(-with-new-features-included-in-the-dataset-)">4.5 Final Algorithm Evaluation Metrics ( with new features included in the dataset )<a class="anchor-link" href="#4.5-Final-Algorithm-Evaluation-Metrics-(-with-new-features-included-in-the-dataset-)">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -1838,7 +1846,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <hr>
 <p><a id='Evaluation_7'></a></p>
 <p><strong>Evaluation 7</strong>:</p>
-<p>Computed metrics using Decision Tree Classifier. The last column <strong>7</strong> holds metrics received with LAY KENNETH L data point removed:</p>
+<p>Computed metrics using Decision Tree Classifier. The last column <strong>12</strong> holds metrics received with LAY KENNETH L data point removed:</p>
 <table>
 <thead><tr>
 <th>Metrics / parameters</th>
@@ -1849,6 +1857,10 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <th style="text-align:center"><strong>5</strong></th>
 <th style="text-align:center"><strong>6</strong></th>
 <th style="text-align:center"><strong>7</strong></th>
+<th><strong>9</strong></th>
+<th><strong>10</strong></th>
+<th><strong>11</strong></th>
+<th><strong>12</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -1856,71 +1868,99 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td>Kfold folds</td>
 <td style="text-align:center">4</td>
 <td style="text-align:center">4</td>
-<td style="text-align:center"><strong>4</strong></td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">5</td>
 <td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
 </tr>
 <tr>
 <td>PCA n_components</td>
 <td style="text-align:center">10</td>
 <td style="text-align:center">7</td>
-<td style="text-align:center"><strong>5</strong></td>
+<td style="text-align:center">5</td>
 <td style="text-align:center">10</td>
 <td style="text-align:center">7</td>
 <td style="text-align:center">5</td>
-<td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td>10</td>
+<td>7</td>
+<td>5</td>
+<td>7</td>
 </tr>
 <tr>
 <td>SelectKBest k</td>
 <td style="text-align:center">10</td>
 <td style="text-align:center">7</td>
-<td style="text-align:center"><strong>5</strong></td>
+<td style="text-align:center">5</td>
 <td style="text-align:center">10</td>
 <td style="text-align:center">7</td>
 <td style="text-align:center">5</td>
-<td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td>9</td>
+<td>7</td>
+<td>5</td>
+<td>7</td>
 </tr>
 <tr>
 <td>Decision Tree average accuracy:</td>
-<td style="text-align:center">0.762</td>
-<td style="text-align:center">0.756</td>
-<td style="text-align:center"><strong>0.833</strong></td>
-<td style="text-align:center">0.847</td>
-<td style="text-align:center">0.722</td>
-<td style="text-align:center">0.708</td>
-<td style="text-align:center">0.818</td>
+<td style="text-align:center">0.804</td>
+<td style="text-align:center">0.832</td>
+<td style="text-align:center">0.798</td>
+<td style="text-align:center">0.853</td>
+<td style="text-align:center">0.798</td>
+<td style="text-align:center">0.798</td>
+<td style="text-align:center">0.805</td>
+<td><strong>0.861</strong></td>
+<td>0.846</td>
+<td>0.811</td>
+<td>0.852</td>
 </tr>
 <tr>
 <td>Decision Tree average recall_score:</td>
-<td style="text-align:center">0.45</td>
-<td style="text-align:center">0.533</td>
-<td style="text-align:center"><strong>0.496</strong></td>
-<td style="text-align:center">0.34</td>
-<td style="text-align:center">0.44</td>
-<td style="text-align:center">0.413</td>
-<td style="text-align:center">0.308</td>
+<td style="text-align:center">0.292</td>
+<td style="text-align:center">0.237</td>
+<td style="text-align:center">0.163</td>
+<td style="text-align:center">0.327</td>
+<td style="text-align:center">0.18</td>
+<td style="text-align:center">0.18</td>
+<td style="text-align:center">0.347</td>
+<td><strong>0.403</strong></td>
+<td>0.514</td>
+<td>0.208</td>
+<td>0.444</td>
 </tr>
 <tr>
 <td>Decision Tree average precision_score:</td>
-<td style="text-align:center">0.247</td>
-<td style="text-align:center">0.329</td>
-<td style="text-align:center"><strong>0.425</strong></td>
-<td style="text-align:center">0.53</td>
-<td style="text-align:center">0.22</td>
-<td style="text-align:center">0.218</td>
-<td style="text-align:center">0.301</td>
+<td style="text-align:center">0.243</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center">0.229</td>
+<td style="text-align:center">0.337</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">0.353</td>
+<td><strong>0.567</strong></td>
+<td>0.4</td>
+<td>0.236</td>
+<td>0.383</td>
 </tr>
 <tr>
 <td>Decision Tree average f1_score:</td>
+<td style="text-align:center">0.248</td>
+<td style="text-align:center">0.26</td>
+<td style="text-align:center">0.188</td>
 <td style="text-align:center">0.317</td>
-<td style="text-align:center">0.4</td>
-<td style="text-align:center"><strong>0.433</strong></td>
-<td style="text-align:center">0.333</td>
-<td style="text-align:center">0.272</td>
-<td style="text-align:center">0.259</td>
-<td style="text-align:center">0.287</td>
+<td style="text-align:center">0.128</td>
+<td style="text-align:center">0.128</td>
+<td style="text-align:center">0.323</td>
+<td><strong>0.437</strong></td>
+<td>0.428</td>
+<td>0.207</td>
+<td>0.401</td>
 </tr>
 </tbody>
 </table>
@@ -1933,7 +1973,8 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.6-Final-Algorithm-Evaluation-Metrics-(-with-new-features-excluded-from-the-dataset-)">4.6 Final Algorithm Evaluation Metrics ( with new features excluded from the dataset )<a class="anchor-link" href="#4.6-Final-Algorithm-Evaluation-Metrics-(-with-new-features-excluded-from-the-dataset-)">&#182;</a></h4>
+<p><a id='Final_evaluation_metrics_wo'></a></p>
+<h3 id="4.6-Final-Algorithm-Evaluation-Metrics-(-with-new-features-excluded-from-the-dataset-)">4.6 Final Algorithm Evaluation Metrics ( with new features excluded from the dataset )<a class="anchor-link" href="#4.6-Final-Algorithm-Evaluation-Metrics-(-with-new-features-excluded-from-the-dataset-)">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -1954,6 +1995,10 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <th style="text-align:center"><strong>4</strong></th>
 <th style="text-align:center"><strong>5</strong></th>
 <th style="text-align:center"><strong>6</strong></th>
+<th style="text-align:center"><strong>7</strong></th>
+<th><strong>9</strong></th>
+<th><strong>10</strong></th>
+<th><strong>11</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -1965,6 +2010,10 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">5</td>
 <td style="text-align:center">5</td>
 <td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
 </tr>
 <tr>
 <td>PCA n_components</td>
@@ -1974,6 +2023,10 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">10</td>
 <td style="text-align:center">7</td>
 <td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td>10</td>
+<td>7</td>
+<td>5</td>
 </tr>
 <tr>
 <td>SelectKBest k</td>
@@ -1983,42 +2036,62 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">10</td>
 <td style="text-align:center">7</td>
 <td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td>9</td>
+<td>7</td>
+<td>5</td>
 </tr>
 <tr>
 <td>Decision Tree average accuracy:</td>
 <td style="text-align:center">0.819</td>
-<td style="text-align:center"><strong>0.777</strong></td>
+<td style="text-align:center">0.777</td>
 <td style="text-align:center">0.79</td>
 <td style="text-align:center">0.812</td>
 <td style="text-align:center">0.812</td>
 <td style="text-align:center">0.791</td>
+<td style="text-align:center">0.804</td>
+<td>0.789</td>
+<td><strong>0.84</strong></td>
+<td>0.769</td>
 </tr>
 <tr>
 <td>Decision Tree average recall_score:</td>
 <td style="text-align:center">0.275</td>
-<td style="text-align:center"><strong>0.454</strong></td>
+<td style="text-align:center">0.454</td>
 <td style="text-align:center">0.371</td>
 <td style="text-align:center">0.287</td>
 <td style="text-align:center">0.44</td>
 <td style="text-align:center">0.44</td>
+<td style="text-align:center">0.25</td>
+<td>0.0</td>
+<td><strong>0.347</strong></td>
+<td>0.236</td>
 </tr>
 <tr>
 <td>Decision Tree average precision_score:</td>
 <td style="text-align:center">0.271</td>
-<td style="text-align:center"><strong>0.299</strong></td>
+<td style="text-align:center">0.299</td>
 <td style="text-align:center">0.261</td>
 <td style="text-align:center">0.287</td>
 <td style="text-align:center">0.267</td>
 <td style="text-align:center">0.502</td>
+<td style="text-align:center">0.347</td>
+<td>0.0</td>
+<td><strong>0.431</strong></td>
+<td>0.2</td>
 </tr>
 <tr>
 <td>Decision Tree average f1_score:</td>
 <td style="text-align:center">0.267</td>
-<td style="text-align:center"><strong>0.334</strong></td>
+<td style="text-align:center">0.334</td>
 <td style="text-align:center">0.292</td>
 <td style="text-align:center">0.28</td>
 <td style="text-align:center">0.301</td>
 <td style="text-align:center">0.319</td>
+<td style="text-align:center">0.261</td>
+<td>0.0</td>
+<td><strong>0.355</strong></td>
+<td>0.198</td>
 </tr>
 </tbody>
 </table>
@@ -2040,15 +2113,22 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The best computed metrics were received using Decision Tree Classifier.
-See column 3 in <a href="#Evaluation_7">Evaluation 7</a></p>
+<p>The best computed metrics were received using Decision Tree Classifier with new features included in the dataset.
+See column 9 in <a href="#Evaluation_7">Evaluation 7</a>:</p>
+<p>Kfold folds = 6
+PCA n_components = 10
+SelectKBest k = 9</p>
+<p>DT average accuracy: 0.861
+DT average recall_score: 0.403
+DT average precision_score: 0.567
+DT average f1_score: 0.437</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">html</span>
