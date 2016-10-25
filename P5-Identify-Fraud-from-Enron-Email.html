@@ -230,7 +230,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -245,7 +245,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -807,7 +807,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The exploration of the combined email and finance dataset revealed that TOTAL and THE TRAVEL AGENCY IN THE PARK' are not a person. Also, the values of all features for CHAN RONNIE is 0. These data points are removed in the procccess of feature formating, by a helper function, featureFormat().</p>
+<p>The exploration of the combined email and finance dataset revealed that <strong>TOTAL</strong> and <strong>THE TRAVEL AGENCY IN THE PARK</strong> are not a person. Also, the values of all features for <strong>CHAN RONNIE</strong> is 0. These data points are removed in the procccess of feature formating, by a helper function, featureFormat().</p>
 
 </div>
 </div>
@@ -817,7 +817,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The plot in the Figure 1 reveals one extreme outlier. This is a data point of LAY KENNETH L. But, since he is a known POI, I did not remove this data point. I was just curious, if it makes a difference to include or remove it in the final evaluation. See <a href="#Evaluation_1">Evaluation 1</a></p>
+<p>The plot in the Figure 1 reveals one extreme outlier. This is a data point of <strong>LAY KENNETH L</strong>. But, since he is a known POI, I did not remove this data point. I was just curious, if it makes a difference to include or remove it in the final evaluation. See <a href="#Evaluation_1">Evaluation 1</a></p>
 <p>The final dataset contains 143 persons.</p>
 
 </div>
@@ -837,7 +837,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I calculated new features: "fraction_from_poi" and "fraction_to_poi".  The features "from_poi_to_this_person", "from_this_person_to_poi", "to_messages", "from_messages" are removed, since these were used to calculate the new ones. I performed testing these new features using my final choice - Decision Tree Classifier. See <a href="#Evaluation_7">Evaluation 7</a> and <a href="#Evaluation_8">Evaluation 8</a> for the metrics performing the testing with features included and excluded respectively.</p>
+<p>I calculated new features: <strong>fraction_from_poi</strong> and <strong>fraction_to_poi</strong>.  The features <strong>from_poi_to_this_person</strong>, <strong>from_this_person_to_poi</strong>, <strong>to_messages</strong>, <strong>from_messages</strong> are removed, since these were used to calculate the new ones. I performed testing these new features using my final choice - Decision Tree Classifier. See <a href="#Evaluation_7">Evaluation 7</a> and <a href="#Evaluation_8">Evaluation 8</a> for the metrics performing the testing with features included and excluded respectively.</p>
 
 </div>
 </div>
@@ -1360,8 +1360,8 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I made some calculations to see if I can remove salary, deferral_payments, bonus, expenses, loan_advances, other, deferred_income, long_term_incentive features, since total_payments are a sum of these features. But not for all data points this equation is valid. Did not remove the above mentioned features.</p>
-<p>I made some calculations to see if the features exercised_stock_options, restricted_stock could be removed, since the total_stock_value is a sum of these. Again, not for all data points this equation is valid. So, I did not remove these features.</p>
+<p>I made some calculations to see if I can remove <strong>salary</strong>, <strong>deferral_payments</strong>, <strong>bonus</strong>, <strong>expenses</strong>, <strong>loan_advances</strong>, <strong>other</strong>, <strong>deferred_income</strong>, <strong>long_term_incentive</strong> features, since <strong>total_payments</strong> are a sum of these features. But not for all data points this equation is valid. Did not remove the above mentioned features.</p>
+<p>I made some calculations to see if the features <strong>exercised_stock_options</strong>, <strong>restricted_stock</strong> could be removed, since the <strong>total_stock_value</strong> is a sum of these. Again, not for all data points this equation is valid. So, I did not remove these features.</p>
 
 </div>
 </div>
@@ -1372,12 +1372,128 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>For a final step I have selected two algorithms GaussianNB and Decison Tree to test to narrow my choices. Both are using automated feature selection.</p>
+<p>For a final step I have selected two algorithms <strong>GaussianNB Classifier</strong> and <strong>Decison Tree Classifier</strong> to test and narrow my choices. Both are using automated feature selection.</p>
 <ul>
-<li>Scaling features with MinMaxScaler. The estimator would not be able to learn from new features correctly as expected, since these are orders of magnitude smaller than others. </li>
-<li>Using Principal component analysis PCA. Linear dimensionality reduction and keeping only the most significant singular vectors to project the data to a lower dimensional space.</li>
-<li>Using SelectKBest. Select features according to the k highest scores.</li>
-<li>Using FeatureUnion to build estimator from PCA and SelectKBest selection. Concatenates results of multiple transformer objects. This estimator applies a list of transformer objects in parallel to the input data, then concatenates the results. This is useful to combine several feature extraction mechanisms into a single transformer.</li>
+<li>Scaling features with <strong>MinMaxScaler()</strong>. The estimator would not be able to learn from new features correctly as expected, since these are orders of magnitude smaller than others, for example <strong>total_payments</strong> and <strong>fraction_to_poi</strong>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>Using Principal component analysis <strong>PCA</strong> to reduce the dimensions of a the dataset by projecting it onto a less-dimensional subspace in order to increase the computational efficiency while retaining most of the information. It is a linear transformation technique which helps to figure out which linear combinations of the features matter the most and will find the "best" line according to two different criteria. <strong>PCA</strong> replaces original variables with new variables, called principal components, which are orthogonal, and have variances in decreasing order. The attribute <strong>explained_variance_ratio</strong> helps to select the optimal number of components. It is a ratio of variance explained by each of the selected components. In my project I calculated an average of a sum of ratio of a result per each cross validation fold. I chose the first 8 components, since the sum = 0.889, which explain 89% of the variation.</p>
+
+<pre><code>  explained_variance_ratio:  
+  [ 0.32998616  0.1344917   0.10834923  0.09720135  0.06934314  0.06234034 0.04079523  0.0361167 ]</code></pre>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the table below the values reveal which variables are most strongly correlated with each component. For the first component the correlation values are of moderate importance for <strong>salary</strong> and <strong>shared_receipt_with_poi</strong> features. The second and third principal components are strongly correlated with <strong>director_fees</strong> feature.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>                             PC1       PC2       PC3       PC4       PC5        PC6       PC7       PC8 
+salary                     0.431285  0.038961 -0.041651  0.015076 -0.013334   0.162536 -0.122661  0.228397  
+deferral_payments          0.081906 -0.010998  0.049766 -0.148566 -0.133163   0.339690  0.092638 -0.043584 
+total_payments             0.165907  0.172076  0.054000 -0.020190  0.044205  -0.151506 -0.022535  0.158164
+loan_advances              0.133377  0.180126  0.067228 -0.014196  0.026935  -0.194567 -0.013124  0.120819 
+bonus                      0.324004  0.059897 -0.127338  0.000537  0.243320  -0.083828 -0.096991  0.102850
+restricted_stock_deferred -0.014807 -0.003427 -0.017957 -0.022021  0.033720  -0.177485  0.054817  0.211769
+deferred_income           -0.164647 -0.059738 -0.076915  0.230563  0.351225  -0.669154 -0.106025  0.116692
+total_stock_value          0.246834  0.295746  0.193499  0.018002 -0.058712  -0.133957 -0.003756 -0.323616
+expenses                   0.233960 -0.082818 -0.473895  0.486240 -0.648165  -0.149426  0.052668  0.074080
+exercised_stock_options    0.249089  0.309375  0.218455 -0.001677 -0.087446  -0.092775 -0.023748 -0.412169
+other                      0.201193  0.212154  0.097023 -0.054807 -0.039913  -0.010092  0.010278  0.216270
+long_term_incentive        0.229327  0.124846  0.060022 -0.057648  0.124667   0.187826 -0.133688  0.596494
+restricted_stock           0.243382  0.264446  0.137603  0.066460  0.004066  -0.208292  0.036124 -0.143209
+director_fees             -0.245979  0.573167 -0.635193 -0.436927 -0.035803  -0.030278 -0.047607 -0.019724
+shared_receipt_with_poi    0.411090 -0.252863 -0.467867  0.037360  0.520101   0.157805  0.138454 -0.324879
+fraction_from_poi          0.149736 -0.350553 -0.029710 -0.401085 -0.201437  -0.173909 -0.761128 -0.137984 
+fraction_to_poi            0.218468 -0.305328  0.030900 -0.568134 -0.187034  -0.356899  0.573282  0.095503</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Using <strong>SelectKBest()</strong> to select features according to the k highest scores. SelectKBest runs statistical tests on each variable and calculates scores and p-values for each. I chose k = 10, features with highest scores and p-value less than 1%.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>('salary', '18.25', '0.000')
+('bonus', '19.82', '0.000')
+('total_stock_value', '15.11', '0.000')
+('exercised_stock_options', '14.13', '0.000')
+('fraction_to_poi', '16.93', '0.000')
+('restricted_stock', '10.03', '0.002')
+('total_payments', '9.18', '0.003')
+('long_term_incentive', '7.89', '0.006')
+('shared_receipt_with_poi', '7.85', '0.006')
+('loan_advances', '7.24', '0.008')</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Following is the result of the features which made to the best 10 list per each cross validation fold. The new feature <strong>fraction_to_poi</strong> is clearly very significant. It appeard 5 times in top 10, with fold = 6.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>{'salary': 6, 'total_payments': 2, 'bonus': 6, 'total_stock_value': 6, 'shared_receipt_with_poi': 2,  'exercised_stock_options': 6,'fraction_to_poi': 5, 'deferred_income': 4, 'restricted_stock': 3, 'long_term_incentive': 2}</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Using <strong>FeatureUnion()</strong> to build estimator from <strong>PCA</strong> and <strong>SelectKBest</strong> selection. This estimator applies a list of transformer objects in parallel to the input data, then concatenates the results. This is useful to combine several feature extraction mechanisms into a single transformer.</li>
 </ul>
 
 </div>
@@ -1409,11 +1525,11 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These are the algorithms I tried to create my model.</p>
 <ul>
-<li>Decision Tree Classifier - supervised learning method used for classification and regression. See the metrics  <a href="#Evaluation_1">Evaluation 1</a></li>
-<li>Gaussian Naive Bayes - implements the Gaussian Naive Bayes algorithm for classification. See <a href="#Evaluation_2">Evaluation 2</a></li>
-<li>AdaBoost classifier - the principle of AdaBoost is to fit a sequence of weak learners (i.e., models that are only slightly better than random guessing, such as small decision trees) on repeatedly modified versions of the data. AdaBoost can be used both for classification and regression problems. See <a href="#Evaluation_3">Evaluation 3</a></li>
-<li>Forests of randomized trees - includes two averaging algorithms based on randomized decision trees: the RandomForest algorithm and the Extra-Trees method. See <a href="#Evaluation_4">Evaluation 4</a></li>
-<li>Support vector machines (SVMs) - a set of supervised learning methods used for classification, regression and outliers detection. See <a href="#Evaluation_5">Evaluation 5</a></li>
+<li><strong>DecisionTreeClassifier</strong> - supervised learning method used for classification and regression. See the metrics  <a href="#Evaluation_1">Evaluation 1</a></li>
+<li><strong>GaussianNB</strong> - implements the Gaussian Naive Bayes algorithm for classification. See <a href="#Evaluation_2">Evaluation 2</a></li>
+<li><strong>AdaBoostClassifier</strong> - the principle of AdaBoost is to fit a sequence of weak learners (i.e., models that are only slightly better than random guessing, such as small decision trees) on repeatedly modified versions of the data. AdaBoost can be used both for classification and regression problems. See <a href="#Evaluation_3">Evaluation 3</a></li>
+<li><strong>RandomForestClassifier</strong> - includes two averaging algorithms based on randomized decision trees: the RandomForest algorithm and the Extra-Trees method. See <a href="#Evaluation_4">Evaluation 4</a></li>
+<li>Support vector machines <strong>SVM</strong> - a set of supervised learning methods used for classification, regression and outliers detection. See <a href="#Evaluation_5">Evaluation 5</a></li>
 </ul>
 
 </div>
@@ -1426,9 +1542,9 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These algorithms I picked for the final run, using parameter tuning and validation functions:</p>
 <ul>
-<li>GaussianNB Classifier ( new features included in the dataset ). See <a href="#Evaluation_6">Evaluation 6</a>.</li>
-<li>Decision Tree ( new features included in the dataset ). See <a href="#Evaluation_7">Evaluation 7</a>.</li>
-<li>Decision Tree ( new features excluded from the dataset ).See <a href="#Evaluation_8">Evaluation 8</a>.</li>
+<li><strong>GaussianNB</strong> Classifier ( new features included in the dataset ). See <a href="#Evaluation_6">Evaluation 6</a>.</li>
+<li><strong>DecisionTreeClassifier</strong> ( new features included in the dataset ). See <a href="#Evaluation_7">Evaluation 7</a>.</li>
+<li><strong>DecisionTreeClassifier</strong> ( new features excluded from the dataset ).See <a href="#Evaluation_8">Evaluation 8</a>.</li>
 </ul>
 
 </div>
@@ -1458,9 +1574,9 @@ AAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaQhAAAAAAJiGAAQAAACAaf4f9ALC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Parameter tuning is a process of trying and testing various parameters which are passed as arguments to the constructor of the estimator classes. It is important because it helps to find better algorithm.  To start using an algorithm, we need beforehand to set parameter values, and later try various combinations of these to see which set of the parameters perform the best when training, in order to improve the fit on the test set.</p>
-<p>In my project I was using GridSearchCV in SVC and Decision Tree models to perform search over supplied parameter values (kernel, C, gamma values), and all the possible combinations of values are evaluated and the best combination is returned.</p>
-<p>GridSearchCV - Exhaustive search over specified parameter values for an estimator. The parameters of the estimator are used to apply to fit and predict functions, and are optimized by grid-search over a parameter grid.</p>
-<p>To compute the metrics using Support Vector Classification:</p>
+<p>In my project I was using <strong>GridSearchCV</strong> in <strong>SVC</strong> and <strong>Decision Tree</strong> models to perform search over supplied parameter values (kernel, C, gamma values), and all the possible combinations of values are evaluated and the best combination is returned.</p>
+<p><strong>GridSearchCV</strong> - Exhaustive search over specified parameter values for an estimator. The parameters of the estimator are used to apply to fit and predict functions, and are optimized by grid-search over a parameter grid.</p>
+<p>To compute the metrics using <strong>Support Vector Classification</strong>:</p>
 <ul>
 <li>The parameters passed: 
 parameters = {"kernel":['rbf'], "C":[1, 1000],"gamma": [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1]}</li>
@@ -1496,13 +1612,13 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <ul>
 <li><p>cross_validation.train_test_split() -  to split dataset into training and testing subsets where I manually changed the proportion of the dataset to include in the test split. When trying variety of classifiers, best performance was obtained with test_size value 0.35.  See <a href="#Evaluation_metrics">Evaluation_metrics</a> of 5 tested classifiers.</p>
 </li>
-<li><p>cross_validation.KFold() - to split and test data into k consecutive folds with various values of the fold parameter. Each fold is used a validation set once while the remaining folds form the training set. For the final 2 algorithms I tried k = (4,5,6) in combination with other parameters. See <a href="#Final_evaluation_metrics">Final evaluation_metrics</a> for the metrics. GaussianNB Classifier was best with the fold = 4, DT Classifier performed best with fold = 6.</p>
+<li><p><strong>cross_validation.KFold()</strong> - to split and test data into k consecutive folds with various values of the fold parameter. Each fold is used a validation set once while the remaining folds form the training set. For the final 2 algorithms I tried k = (4,5,6) in combination with other parameters. See <a href="#Final_evaluation_metrics">Final evaluation_metrics</a> for the metrics. GaussianNB Classifier was best with the fold = 4, DT Classifier performed best with fold = 6.</p>
 </li>
-<li><p>SelectKBest() - to select k number of highest scored features. In my project the best performance was achieved when k = 9. See <a href="#Final_evaluation_metrics">Final evaluation_metrics</a> for the metrics.</p>
+<li><p><strong>SelectKBest()</strong> - to select k number of highest scored features. In my project the best performance was achieved when k = 9. See <a href="#Final_evaluation_metrics">Final evaluation_metrics</a> for the metrics.</p>
 </li>
-<li><p>PCA() - to reduce the feature dimensions using Principal component analysis PCA. It decomposes a multivariate dataset in a set of successive orthogonal components that explain a maximum amount of the variance and bring out strong patterns in a dataset.  In PCA I tried values of n_components = (5,7,10), as the maximum number of features to keep. Best performance was achieved with n_components = 10.</p>
+<li><p><strong>PCA()</strong> - to reduce the feature dimensions using Principal component analysis PCA. It decomposes a multivariate dataset in a set of successive orthogonal components that explain a maximum amount of the variance and bring out strong patterns in a dataset.  In PCA I tried values of n_components = (5,7,10), as the maximum number of features to keep. Best performance was achieved with n_components = 8.</p>
 </li>
-<li><p>FeatureUnion() - to concatenate results of estimator from PCA and Univariate SelectKBest selection.</p>
+<li><p><strong>FeatureUnion()</strong> - to concatenate results of estimator from PCA and Univariate SelectKBest selection. It allows to use multiple feature selection processes in parallel.</p>
 </li>
 </ul>
 
@@ -1915,7 +2031,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.798</td>
 <td style="text-align:center">0.798</td>
 <td style="text-align:center">0.805</td>
-<td><strong>0.861</strong></td>
+<td>0.861</td>
 <td>0.846</td>
 <td>0.811</td>
 <td>0.852</td>
@@ -1929,7 +2045,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.18</td>
 <td style="text-align:center">0.18</td>
 <td style="text-align:center">0.347</td>
-<td><strong>0.403</strong></td>
+<td>0.403</td>
 <td>0.514</td>
 <td>0.208</td>
 <td>0.444</td>
@@ -1943,7 +2059,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.1</td>
 <td style="text-align:center">0.1</td>
 <td style="text-align:center">0.353</td>
-<td><strong>0.567</strong></td>
+<td>0.567</td>
 <td>0.4</td>
 <td>0.236</td>
 <td>0.383</td>
@@ -1957,7 +2073,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.128</td>
 <td style="text-align:center">0.128</td>
 <td style="text-align:center">0.323</td>
-<td><strong>0.437</strong></td>
+<td>0.437</td>
 <td>0.428</td>
 <td>0.207</td>
 <td>0.401</td>
@@ -2051,7 +2167,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.791</td>
 <td style="text-align:center">0.804</td>
 <td>0.789</td>
-<td><strong>0.84</strong></td>
+<td>0.84</td>
 <td>0.769</td>
 </tr>
 <tr>
@@ -2064,7 +2180,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.44</td>
 <td style="text-align:center">0.25</td>
 <td>0.0</td>
-<td><strong>0.347</strong></td>
+<td>0.347</td>
 <td>0.236</td>
 </tr>
 <tr>
@@ -2077,7 +2193,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.502</td>
 <td style="text-align:center">0.347</td>
 <td>0.0</td>
-<td><strong>0.431</strong></td>
+<td>0.431</td>
 <td>0.2</td>
 </tr>
 <tr>
@@ -2090,7 +2206,7 @@ parameters  = {"criterion" : ["gini", "entropy"],"min_samples_split": [2,3] }</l
 <td style="text-align:center">0.319</td>
 <td style="text-align:center">0.261</td>
 <td>0.0</td>
-<td><strong>0.355</strong></td>
+<td>0.355</td>
 <td>0.198</td>
 </tr>
 </tbody>
@@ -2128,7 +2244,7 @@ See column 9 in <a href="#Evaluation_7">Evaluation 7</a>:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">html</span>
@@ -2157,6 +2273,38 @@ table {float:left;
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-RESOURCES">6. RESOURCES<a class="anchor-link" href="#6.-RESOURCES">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues">http://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+
+</div>
 </div>
 </div>
 

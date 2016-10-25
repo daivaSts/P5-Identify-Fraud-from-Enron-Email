@@ -5,6 +5,7 @@ import pickle
 import matplotlib.pyplot as plt
 import cPickle
 import numpy as np
+import pandas as pd
 
 from tester import dump_classifier_and_data
 
@@ -14,15 +15,17 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
 from sklearn.pipeline import Pipeline, FeatureUnion
-from sklearn.metrics import accuracy_score, precision_score
+from sklearn.metrics import accuracy_score, precision_score, classification_report
 from sklearn.metrics import recall_score, f1_score
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
 from sklearn.grid_search import GridSearchCV
 from sklearn.naive_bayes import GaussianNB
 from sklearn.decomposition import PCA, RandomizedPCA
 from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import f_classif
 
 from helper_functions import *
+
 
 
 ##############################################################################
@@ -286,7 +289,6 @@ if False:
 	print "SVC f1_score: {}\n".format(f1_sc)
 	print "SVC best parameters: {}\n".format(clf.best_params_)
 
- 
 
 ###############################################################################
 ### Task 5: Tune the classifier to achieve better than .3 precision and recall 
@@ -301,14 +303,20 @@ if True:
 	recall_sc_ave = 0
 	precision_sc_ave = 0
 	f1_sc_ave = 0
-	expl_var_ave = 0
+	expl_var_sum_ave = 0
+
 	folds = 6
-	n_components = 10
+	n_components = 8
+	k = 10
+
+	
+	best_features_dict = dict()
 
 
 	kf = cross_validation.KFold(len(labels), folds)
 
 	for train_indices, test_indices in kf:
+		
 
 		# splitting data into train/test subsets
 		features_train = [features[i] for i in train_indices]
@@ -316,20 +324,49 @@ if True:
 		labels_train = [labels[i] for i in train_indices]
 		labels_test = [labels[i] for i in test_indices]
 
+		# Transforms features by scaling each feature to [0, 1] range
+		min_max_scaler = preprocessing.MinMaxScaler()
+		features_train = min_max_scaler.fit_transform(features_train)
+		features_test = min_max_scaler.fit_transform(features_test)
+
 		# Reduce the feature dimentions using Principal component analysis PCA
 		pca = PCA( n_components = n_components, whiten = True)
-		pca.fit( features_train)
+		pca.fit(features_train)
 
-		# TEST: pca components
+
+		# pca components
 		if False:
 			pca_first = pca.components_[0]
 			pca_second = pca.components_[1]
-			#print "pca first component: {}".format( pca_first)
+			print "pca first component: {}".format( pca_first)
+			print "pca second component: {}".format( pca_second)
 
-			#print "***"	
+		# visualization: features table for each principal component	
+		pca_components_df = pd.DataFrame(data = pca.components_, columns = features_list[1:])	
 
-		# Select features according to the k highest scores
-		selection = SelectKBest(k=9)
+		if False:	
+			print pca_components_df.transpose()
+			print 'explained_variance_ratio: ', pca.explained_variance_ratio_
+
+		# calculate sum of explained_variance_ratio for each fold of KFold 
+		expl_var_sum = pca.explained_variance_ratio_.sum()
+
+
+		# select features according to the k highest scores
+		selection = SelectKBest(f_classif,k)
+		selection.fit_transform(features_train,labels_train )
+		feature_scores = ['%.2f' % score for score in selection.scores_ ]
+		feature_scores_pvalues = ['%.3f' % pvalue for pvalue in  selection.pvalues_ ]
+
+
+		# visualization: table of features with scores and p-values
+		features_selected_tuple = [(features_list[i+1], feature_scores[i], feature_scores_pvalues[i]) for i in selection.get_support(indices=True)]
+		features_table_sorted = sorted(features_selected_tuple, key=lambda x: x[2], reverse=False)
+
+		# counting the top 10 features for each fold of KFold
+		for item in features_table_sorted:
+			best_features_dict[item[0]] = best_features_dict.get(item[0],0) + 1
+			
 
 		# Build estimator from PCA and Univariate SelectKBest selection:
 		combined_features = FeatureUnion([("pca", pca),\
@@ -341,6 +378,8 @@ if True:
 
 		# Use combined test features to transform test subset:
 		features_test_reduced = combined_features.transform( features_test )
+
+
 
 		# parameters to be passed to GridSearchCV for cross validation
 		parameters  = {"criterion" : ["gini", "entropy"],
@@ -360,6 +399,7 @@ if True:
 		# fittig training subset
 		clf.fit( features_train_reduced, labels_train ) 
 
+
 		# passing in test subset to get the prediction coeficient
 		pred = clf.predict( features_test_reduced )
 
@@ -369,20 +409,63 @@ if True:
 		precision_sc = precision_score( labels_test, pred )
 		f1_sc = f1_score( labels_test, pred )
 
+		report = classification_report( labels_test, pred)
+		### and print the report
+		#print report
 
 		# calculatting total of the metrics
 		acc_ave += acc
 		recall_sc_ave += recall_sc
 		precision_sc_ave += precision_sc
 		f1_sc_ave += f1_sc
+		expl_var_sum_ave += expl_var_sum
 		
+
+		#best_est = clf.best_estimator_
+
 
 	# printing averages of the metrics
 	if True:
 		print "DT average accuracy: {}".format( round( acc_ave/ folds, 3) )
 		print "DT average recall_score: {}".format( round( recall_sc_ave / folds,3) )
 		print "DT average precision_score: {}".format( round( precision_sc_ave / folds, 3))
-		print "DT average f1_score: {}\n".format( round( f1_sc_ave/ folds , 3))	
+		print "DT average f1_score: {}".format( round( f1_sc_ave/ folds , 3))	
+		print "Average sum of explained variance ratio: {}\n".format( round( expl_var_sum_ave/ folds, 3))
+
+
+# the result of counted top features.
+if True:
+	print best_features_dict
+
+
+##############################
+#### testing
+
+print clf.grid_scores_
+#print clf.best_estimator_
+#print clf.best_score_
+#print clf.best_params_
+#print clf.scorer_
+
+#print selection.scores_ 
+#print selection.pvalues_
+#print features_test_reduced[0]
+#print features_train_reduced[0]
+#print combined_features.get_feature_names()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # GaussianNB Classifier
